@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Manage your account!</title>
+    </head>
+    <body>
+        <h1>Hi <a th:text="${name}"></a></h1>
+
+        <h1>Manage your account using this form</h1>
+
+        <form action="#" th:action="@{/account}" method="POST">
+            <p><label for="address">Adress</label>: <input type="text" name="address" id="address"/></p>
+            <p><label for="olsPAss">Old password</label>: <input type="password" name="oldPass" id="oldPass"/></p>
+            <p><label for="newPass">New password</label>: <input type="password" name="newPass" id="newPass"/></p>
+
+            
+            <input type="hidden" name="name" th:value="${name}" id="name"/>
+
+            <p><input type="submit" value="Submit" /></p>
+        </form>
+
+        <p></p>
+    </body>
+</html>

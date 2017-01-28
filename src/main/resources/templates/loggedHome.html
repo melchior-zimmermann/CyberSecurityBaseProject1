@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Welcome to your THING!</title>
+    </head>
+    <body>
+        <h1>Hi <a th:text="${name}"></a></h1>
+        <h1>Here's your THING:</h1>
+        <h1><a th:text="${thing}"></a></h1>
+        <h2>And here are other people's things:</h2>
+        <ul>
+            <li th:each="entry : ${users}">
+                <span th:text="${entry.getName()}"></span> - <span th:text="${entry.getThing()}"></span>
+            </li>
+        </ul>
+        
+        <form action="#" th:action="@{/loggedHome}" method="POST">
+            <p><input type="radio" name="toDo" value="manage">Manage my THING</input></p>
+            <p><input type="radio" name="toDo" value="account">Manage my account</input></p>
+            <p><input type="radio" name="toDo" value="logout">Logout</input></p>
+            
+            <input type="hidden" name="name" th:value="${name}" id="name"/>
+
+            <p><input type="submit" value="Submit" /></p>
+        </form>
+
+        
+        <!--
+        <form action="#" th:action="@{/form}" method="POST">
+            <p><label for="name">Name</label>: <input type="text" name="name" id="name"/></p>
+            <p><label for="password">Password</label>: <input type="password" name="password" id="password"/></p>
+            <p><input type="submit" value="Submit" /></p>
+        </form>
+-->
+        <p></p>
+    </body>
+</html>

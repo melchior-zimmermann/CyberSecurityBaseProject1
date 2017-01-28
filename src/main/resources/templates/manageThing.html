@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Manage your thing!</title>
+    </head>
+    <body>
+        <h1>Hi <a th:text="${name}"></a></h1>
+
+        <h1>Manage your THING using this form</h1>
+
+        <form action="#" th:action="@{/manageThing}" method="POST">
+            <p><label for="thing">Your THING</label>: <input type="text" name="thing" id="thing"/></p>
+            <p><input type="radio" name="share" value="no" checked="true"> No</input></p>
+            <p><input type="radio" name="share" value="yes"> Yes</input></p>
+            
+            <input type="hidden" name="name" th:value="${name}" id="name"/>
+
+            <p><input type="submit" value="Submit" /></p>
+        </form>
+
+        <p></p>
+    </body>
+</html>

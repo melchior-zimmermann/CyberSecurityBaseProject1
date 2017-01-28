@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Bad Login!</title>
+    </head>
+    <body>
+        <h1>Sorry <a th:text="${name}"></a>!</h1>
+        <h1>Password and username do not match!</h1>
+        <h1>Click <a th:href="@{/welcome}">here</a> to return to welcome page.</h1>
+        <h1>Click <a th:href="@{/login}">here</a> to try again!</h1>
+
+    </body>
+</html>
